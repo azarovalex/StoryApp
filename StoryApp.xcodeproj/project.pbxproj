@@ -12,6 +12,8 @@
 		EC459F9420A3299200CAA1B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC459F9220A3299200CAA1B8 /* Main.storyboard */; };
 		EC459F9620A3299400CAA1B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC459F9520A3299400CAA1B8 /* Assets.xcassets */; };
 		EC459F9920A3299400CAA1B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC459F9720A3299400CAA1B8 /* LaunchScreen.storyboard */; };
+		EC459FA120A33B8C00CAA1B8 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC459FA020A33B8C00CAA1B8 /* Story.swift */; };
+		EC459FA320A33F1A00CAA1B8 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC459FA220A33F1A00CAA1B8 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		EC459F9520A3299400CAA1B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC459F9820A3299400CAA1B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC459F9A20A3299400CAA1B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC459FA020A33B8C00CAA1B8 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		EC459FA220A33F1A00CAA1B8 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				EC459F9520A3299400CAA1B8 /* Assets.xcassets */,
 				EC459F9720A3299400CAA1B8 /* LaunchScreen.storyboard */,
 				EC459F9A20A3299400CAA1B8 /* Info.plist */,
+				EC459FA020A33B8C00CAA1B8 /* Story.swift */,
+				EC459FA220A33F1A00CAA1B8 /* Page.swift */,
 			);
 			path = StoryApp;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			files = (
 				EC459F9120A3299200CAA1B8 /* ViewController.swift in Sources */,
 				EC459F8F20A3299200CAA1B8 /* AppDelegate.swift in Sources */,
+				EC459FA320A33F1A00CAA1B8 /* Page.swift in Sources */,
+				EC459FA120A33B8C00CAA1B8 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
