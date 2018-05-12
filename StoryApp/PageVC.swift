@@ -38,29 +38,41 @@ class PageVC: UIViewController {
 
     var page: Page?
     
-    let artworkView: UIImageView = {
+    lazy var artworkView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
+        imageView.image = page?.story.artwork
         return imageView
     }()
     
-    let storyLabel: UILabel = {
+    lazy var storyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
- 
+        label.attributedText = page?.string(attributed: true)
         return label
     }()
     
-    let firstChoiceButton: UIButton = {
+    lazy var firstChoiceButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        let title = page?.firstChoice?.title ?? "Play Again!"
+        let selector = (page?.firstChoice != nil) ?  #selector(loadFirstChoice) : #selector(playAgain)
+        
+        button.setTitle(title, for: .normal)
+        button.addTarget(self, action: selector, for: .touchUpInside)
+
         return button
     }()
-    let secondChoiceButton: UIButton = {
+    
+    lazy var secondChoiceButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.setTitle(page?.secondChoice?.title, for: .normal)
+        button.addTarget(self, action: #selector(loadSecondChoice), for: .touchUpInside)
+        
         return button
     }()
     
@@ -77,27 +89,7 @@ class PageVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
-        
-        if let page = page {
-            artworkView.image = page.story.artwork
-            
-            storyLabel.attributedText = page.string(attributed: true)
-            
-            if let firstChoice = page.firstChoice {
-                firstChoiceButton.setTitle(firstChoice.title, for: .normal)
-                firstChoiceButton.addTarget(self, action: #selector(loadFirstChoice), for: .touchUpInside)
-            } else {
-                firstChoiceButton.setTitle("Play Again!", for: .normal)
-                firstChoiceButton.addTarget(self, action: #selector(playAgain), for: .touchUpInside)
-            }
-            
-            if let secondChoice = page.secondChoice {
-                secondChoiceButton.setTitle(secondChoice.title, for: .normal)
-                secondChoiceButton.addTarget(self, action: #selector(loadSecondChoice), for: .touchUpInside)
-            }
-        }
     }
     
     override func viewWillLayoutSubviews() {
